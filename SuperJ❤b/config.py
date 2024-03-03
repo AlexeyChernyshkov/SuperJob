@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 # Настройка опций для headless режима
@@ -8,7 +7,7 @@ chrome_options.add_argument("--headless")
 
 # Инициализация WebDriver с указанием опций
 driver = webdriver.Chrome(options=chrome_options)
-base_url = 'https://www.saucedemo.com/'
+base_url = 'https://www.superjob.ru/'
 
 search_result_vakansii_url = 'https://www.superjob.ru/vacancy/search/'
 search_result_resume_url = 'https://www.superjob.ru/resume/search_resume.html'
