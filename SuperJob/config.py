@@ -1,9 +1,19 @@
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+import pytest
+
+
+@pytest.fixture()
+def browser():
+    driver = webdriver.Chrome()
+    yield driver
+    driver.quit()
+
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 
+# driver = webdriver.Chrome(options=chrome_options)
 
 base_url = 'https://www.superjob.ru/'
 
