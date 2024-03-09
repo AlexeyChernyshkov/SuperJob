@@ -22,7 +22,7 @@ create_resume = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div[1]/div/div[
 
 # Страница создания резюме
 import_resume = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div/div[1]/div/div[1]/div/div/div[1]/button/div/span')
-field_name = (By.NAME, 'person.firstName')
+field_name = By.NAME, 'person.firstName'
 field_lastname = (By.NAME, 'person.lastName')
 field_birthdate = (By.CSS_SELECTOR, 'input[name="birthDate"]')
 calendar_birthday = (By.CSS_SELECTOR, '[class="_1yghA WwHMf _2PlM0"]')
