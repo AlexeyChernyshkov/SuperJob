@@ -1,0 +1,1 @@
+search_result_resumes_url = 'https://www.superjob.ru/resume/search_resume.html'

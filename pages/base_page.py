@@ -1,5 +1,6 @@
 """Страница с методами, которые буду общими для всех страниц"""
 
+
 class BasePage():
     def __init__(self, browser, url):
         self.browser = browser
@@ -15,3 +16,5 @@ class BasePage():
     def is_displayed(self):
         return self.is_displayed()
 
+    def text(self):
+        return self.browser.text()

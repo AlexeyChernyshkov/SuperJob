@@ -1,0 +1,1 @@
+search_result_courses_url = 'https://www.superjob.ru/kursy/'
