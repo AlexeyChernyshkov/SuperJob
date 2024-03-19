@@ -3,12 +3,14 @@
 
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+# from selenium.webdriver.support.ui import WebDriverWait
 import pytest
 
 
 @pytest.fixture()
 def browser():
     driver = webdriver.Chrome(options=chrome_options)
+    # wait = WebDriverWait(driver, 10)
     yield driver
     driver.quit()
 
@@ -16,6 +18,7 @@ def browser():
 chrome_options = Options()
 chrome_options.page_load_strategy = 'eager' #Открываем странцу в режиме запуска "Жаждящий", чтобы не ждать скриптов
 # chrome_options.add_argument("--headless")
+
 
 
 base_url = 'https://www.superjob.ru/'
