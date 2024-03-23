@@ -10,7 +10,6 @@ import pytest
 @pytest.fixture()
 def browser():
     driver = webdriver.Chrome(options=chrome_options)
-    # wait = WebDriverWait(driver, 10)
     yield driver
     driver.quit()
 
