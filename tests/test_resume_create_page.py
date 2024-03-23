@@ -1,5 +1,5 @@
 from pages.resume_create import *
-from selenium.webdriver.support import expected_conditions as EC
+
 
 import time
 
@@ -42,15 +42,10 @@ import time
 def test_resume_completion(browser):
     resume_completion = ResumeCreate(browser, resume_create_url)
     resume_completion.open()
-    resume_completion.wait.until(EC.text_to_be_present_in_element(resume_save_button, "Сохранить"))
-    print("1")
+    resume_completion.wait_text_in_element(resume_save_button, "Сохранить")
     resume_completion.name().send_keys("Alexey")
     resume_completion.last_name().send_keys("Chernyshkov")
     resume_completion.birthday().send_keys("15.12.1999")
     # assert resume_completion.remove_town().is_enabled, "not click"
     # resume_completion.remove_town().click()
     time.sleep(5)
-
-
-
-
