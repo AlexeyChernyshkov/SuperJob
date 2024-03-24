@@ -9,7 +9,7 @@ field_password = (By.XPATH, '//input[@name="password"]')
 # Кнопка Войти
 button_login = (By.XPATH, '//button[@class="_129Bc _1L7ad ejaLn PjivS f-test-button-Vojti _26xin"]')
 
-# Строка поиска
+# Строка поиска, у резюме своя строка
 the_search_string = (By.XPATH, '//input[@name="keywords"]')
 #  Кнопка Найти в поисковой строке
 the_search_button = (By.XPATH, '//button[@title="Найти"]')
@@ -88,8 +88,9 @@ filter_type_vacancy = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/di
 filter_additional_parameters = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
                                           '17]/div/span/div/div/div/h2')
 
-# --------------------------Страница поиска вакансий---------------------------------
-
+# --------------------------Страница поиска резюме---------------------------------
+# Строка поиска
+the_search_string_resume = (By.XPATH, '//input[@name="keywords[0][keys]"]')
 filter_region_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Regiony _1Usdr _1aWiZ _2Lgqw']")
 filter_active_applicants_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Aktivnost_soiskatelej _1Usdr _1aWiZ _2Lgqw']")
 filter_specialization_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Specializacii _1Usdr _1aWiZ _2Lgqw']")
@@ -102,7 +103,7 @@ filter_language_proficiency_resume = (By.XPATH, "//span[@class='f-test-clickable
 filter_education_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Obrazovanie _1Usdr _1aWiZ _2Lgqw']")
 filter_driver_license_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Nalichie_prav _1Usdr _1aWiZ _2Lgqw']")
 
-# --------------------------Страница поиска вакансий---------------------------------
+# --------------------------Страница поиска курсы---------------------------------
 
 filter_specialization_courses = (By.XPATH,"//span[@class='f-test-clickable-title f-test-clickable-Specializacii _1Usdr _1aWiZ _2Lgqw']" )
 filter_form_of_education_courses = (By.XPATH,"//span[@class='f-test-clickable-title f-test-clickable-Format_obucheniya _1Usdr _1aWiZ _2Lgqw']")

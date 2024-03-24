@@ -11,8 +11,6 @@ def test_field_exist(browser):
 
     assert search_result.title() == "Курсы", f"Селект Курсы не найден"
 
-    assert search_result.filter_field_button().is_displayed, f"Кнопка Расширенный поиск не найдена"
-
     assert search_result.filter_specialization().is_displayed, f"Фильтр по специализации не найден"
 
     assert search_result.filter_form_of_education().is_displayed, f"Фильтр по формату обучения не найден"

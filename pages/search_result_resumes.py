@@ -10,7 +10,7 @@ class SearchResultResume(BasePage):
         super().__init__(browser, url)
 
     def search_string(self):
-        return self.find(the_search_string)
+        return self.find(the_search_string_resume)
 
     def search_button(self):
         return self.find(the_search_button)

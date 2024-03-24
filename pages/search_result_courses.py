@@ -3,6 +3,7 @@ from pages.locators import *
 
 search_result_courses_url = 'https://www.superjob.ru/kursy/'
 
+
 class SearchResultCourses(BasePage):
 
     def __init__(self, browser, url):
@@ -16,9 +17,6 @@ class SearchResultCourses(BasePage):
 
     def title(self):
         return self.find(selection_selector).text
-
-    def filter_field_button(self):
-        return self.find(button_filter_search)
 
     def filter_specialization(self):
         return self.find(filter_specialization_courses)
@@ -34,4 +32,3 @@ class SearchResultCourses(BasePage):
 
     def filter_school(self):
         return self.find(filter_school_courses)
-
