@@ -47,5 +47,6 @@ def test_resume_completion(browser):
     resume_completion.last_name().send_keys("Chernyshkov")
     resume_completion.birthday().send_keys("15.12.1999")
     # assert resume_completion.remove_town().is_enabled, "not click"
-    # resume_completion.remove_town().click()
-    time.sleep(5)
+    resume_completion.remove_town().click()
+    resume_completion.town().send_keys("Барнаул")
+    time.sleep(1)
