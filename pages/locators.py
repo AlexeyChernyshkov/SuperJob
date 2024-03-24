@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 #  Кнопка входа для авторизации
-button_input = (By.XPATH, '//span[@class="nCzP5 _2OAxS _2GSjy FbZAB _1quxI"]')
+button_input = (By.XPATH, '//span[@class="_38FKN f-test-link-Vhod"]')
 
 #  Поля логин и пароль
 field_username = (By.XPATH, '//input[@name="login"]')
@@ -15,8 +15,8 @@ the_search_string = (By.XPATH, '//input[@name="keywords"]')
 the_search_button = (By.XPATH, '//button[@title="Найти"]')
 # селект в строке поиска
 selection_selector = (By.XPATH, '//button[@id="searchByHintSelect-input"]')
-
-
+#  Кнопка Расширенный поиск у фильтров
+button_filter_search = (By.XPATH, '//button[@title="Расширенный поиск"]')
 # ---------------------------Страница с резюме в ЛК---------------------------------
 create_resume = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div[1]/div/div[2]/a[1]/span')
 
@@ -45,8 +45,9 @@ volunteer_work = (By.NAME, 'volunteerWork')
 # Сохранение резюме
 resume_save_button = (By.CSS_SELECTOR, '.f-test-button-Sohranit:not(.f-test-block-experience .f-test-button-Sohranit)')
 rule_agreement_checkbox = (By.NAME, 'rulesAgreement')
-change_user_agreement_text = (By.CSS_SELECTOR, '.f-test-pseudolink-Izmenit_usloviya_i_zaprety_na_obrabotku_personalnyh_dannyh')
-sign_in_button = (By.CSS_SELECTOR, '.f-test-button-Vojti') # только у неавторизованного юзера
+change_user_agreement_text = (
+By.CSS_SELECTOR, '.f-test-pseudolink-Izmenit_usloviya_i_zaprety_na_obrabotku_personalnyh_dannyh')
+sign_in_button = (By.CSS_SELECTOR, '.f-test-button-Vojti')  # только у неавторизованного юзера
 
 # Раздел "Опыт работы"
 experience_position = (By.NAME, 'experience.position')
@@ -68,11 +69,8 @@ experience_save_button = (By.CSS_SELECTOR, '.f-test-block-experience .f-test-but
 # Раздел с доп. параметрами
 
 
-
-
-
 # --------------------------Страница поиска вакансий---------------------------------
-button_filter_search = (By.XPATH, '//button[@title="Расширенный поиск"]')
+
 filter_region = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
                            '3]/div/span/div/div/div/h2')
 filter_solary = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
@@ -89,3 +87,25 @@ filter_type_vacancy = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/di
                                  '14]/div/span/div/div/div/h2')
 filter_additional_parameters = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
                                           '17]/div/span/div/div/div/h2')
+
+# --------------------------Страница поиска вакансий---------------------------------
+
+filter_region_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Regiony _1Usdr _1aWiZ _2Lgqw']")
+filter_active_applicants_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Aktivnost_soiskatelej _1Usdr _1aWiZ _2Lgqw']")
+filter_specialization_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Specializacii _1Usdr _1aWiZ _2Lgqw']")
+filter_work_experience_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Opyt_raboty _1Usdr _1aWiZ _2Lgqw']")
+filter_age_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Vozrast _1Usdr _1aWiZ _2Lgqw']")
+filter_solary_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Zarplata _1Usdr _1aWiZ _2Lgqw']")
+filter_citizenship_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Grazhdanstvo _1Usdr _1aWiZ _2Lgqw']")
+filter_type_of_congestion_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Tip_zanyatosti _1Usdr _1aWiZ _2Lgqw']")
+filter_language_proficiency_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Vladenie_in_yazykom _1Usdr _1aWiZ _2Lgqw']")
+filter_education_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Obrazovanie _1Usdr _1aWiZ _2Lgqw']")
+filter_driver_license_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Nalichie_prav _1Usdr _1aWiZ _2Lgqw']")
+
+# --------------------------Страница поиска вакансий---------------------------------
+
+filter_specialization_courses = (By.XPATH,"//span[@class='f-test-clickable-title f-test-clickable-Specializacii _1Usdr _1aWiZ _2Lgqw']" )
+filter_form_of_education_courses = (By.XPATH,"//span[@class='f-test-clickable-title f-test-clickable-Format_obucheniya _1Usdr _1aWiZ _2Lgqw']")
+filter_complexity_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Uroven_slozhnosti _1Usdr _1aWiZ _2Lgqw']")
+filter_cost_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Stoimost _1Usdr _1aWiZ _2Lgqw']")
+filter_school_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Shkola _1Usdr _1aWiZ _2Lgqw']")

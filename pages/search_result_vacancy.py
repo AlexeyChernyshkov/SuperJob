@@ -4,7 +4,7 @@ from pages.locators import *
 search_result_vacancy_url = 'https://www.superjob.ru/vacancy/search/'
 
 
-class SearchResult(BasePage):
+class SearchResultVacancy(BasePage):
 
     def __init__(self, browser, url):
         super().__init__(browser, url)
@@ -47,4 +47,3 @@ class SearchResult(BasePage):
 
     def filter_field_additional_parameters(self):
         return self.find(filter_additional_parameters)
-
