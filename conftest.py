@@ -11,6 +11,7 @@ import pytest
 def browser():
     driver = webdriver.Chrome(options=chrome_options)
     yield driver
+    driver.save_screenshot("test.png")
     driver.quit()
 
 
