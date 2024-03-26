@@ -1,6 +1,7 @@
 """Страница с методами, которые буду общими для всех страниц"""
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from pages.locators import *
 
 
 class BasePage():
@@ -35,3 +36,5 @@ class BasePage():
     def wait_text_in_element(self, locator, string):
         return WebDriverWait(self.browser, 10).until(EC.text_to_be_present_in_element(locator, string))
 
+    def top_button_login(self):
+        return self.find(top_button_login)
