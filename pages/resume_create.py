@@ -40,6 +40,9 @@ class ResumeCreate(BasePage):
     def remove_town(self):
         return self.find(remove_town)
 
+    def town_dropdown(self):
+        return self.find(town_dropdown)
+
     def remote_work_checkbox(self):
         return self.find(remote_work_checkbox)
 

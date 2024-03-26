@@ -1,5 +1,8 @@
-from pages.resume_create import *
+import pytest
 
+from pages.resume_create import *
+from pages.main_page import Autorization_customers
+from pages.users import *
 
 import time
 
@@ -38,14 +41,26 @@ import time
 #     assert resume_create.change_user_agreement_text().is_displayed, f"No change_user_agreement_text"
 #     # assert resume_create.sign_in_button().is_displayed, f"No sign_in_button"
 
+@pytest.mark.parametrize('username, password', [(test_user_customers, test_password_user)])
+def test_resume_create_with_authorization(browser, username, password):
+    resume_auth_create = ResumeCreate(browser, resume_create_url)
+    resume_auth_create.open()
+    resume_auth_create.top_button_login().click()
+    resume_auth_create.wait_text_in_element(button_login_accept, "Войти")
+    authtorization = Autorization_customers(browser)
+    authtorization.login(username, password)
+    time.sleep(3)
 
-def test_resume_completion(browser):
-    resume_completion = ResumeCreate(browser, resume_create_url)
-    resume_completion.open()
-    resume_completion.wait_text_in_element(resume_save_button, "Сохранить")
-    resume_completion.name().send_keys("Alexey")
-    resume_completion.last_name().send_keys("Chernyshkov")
-    resume_completion.birthday().send_keys("15.12.1999")
-    # assert resume_completion.remove_town().is_enabled, "not click"
-    # resume_completion.remove_town().click()
-    time.sleep(5)
+# def test_resume_completion(browser):
+#     resume_completion = ResumeCreate(browser, resume_create_url)
+#     resume_completion.open()
+#     resume_completion.wait_text_in_element(resume_save_button, "Сохранить")
+#     resume_completion.name().send_keys("Alexey")
+#     resume_completion.last_name().send_keys("Chernyshkov")
+#     resume_completion.birthday().send_keys("15.12.1999")
+#     # assert resume_completion.remove_town().is_enabled, "not click"
+#     resume_completion.remove_town().click()
+#     resume_completion.town().send_keys("Барнаул")
+#     resume_completion.wait_text_in_element(town_dropdown, "Барнаул")
+#     resume_completion.town_dropdown().click()
+#     time.sleep(1)
