@@ -1,13 +1,14 @@
 from selenium.webdriver.common.by import By
 
 #  Кнопка входа для авторизации
-button_input = (By.XPATH, '//span[@class="_38FKN f-test-link-Vhod"]')
+# top_button_login = (By.XPATH, '//span[@class="_38FKN f-test-link-Vhod"]')
+top_button_login = (By.CSS_SELECTOR, '.f-test-link-Vhod')
 
 #  Поля логин и пароль
 field_username = (By.XPATH, '//input[@name="login"]')
 field_password = (By.XPATH, '//input[@name="password"]')
 # Кнопка Войти
-button_login = (By.XPATH, '//button[@class="_129Bc _1L7ad ejaLn PjivS f-test-button-Vojti _26xin"]')
+button_login_accept = (By.XPATH, '//button[@class="_129Bc _1L7ad ejaLn PjivS f-test-button-Vojti _26xin"]')
 
 # Строка поиска, у резюме своя строка
 the_search_string = (By.XPATH, '//input[@name="keywords"]')
@@ -30,6 +31,7 @@ hide_birthday_checkbox = (By.NAME, 'hideBirthday')
 add_photo = (By.CSS_SELECTOR, 'span > button> span')
 add_photo_img = (By.CSS_SELECTOR, 'span > div img')
 town = (By.CSS_SELECTOR, '[name="town.id"]:not(.f-test-block-experience [name="town.id"])')
+town_dropdown = (By.CSS_SELECTOR, '.f-test-option-Barnaul')
 remove_town = (By.CSS_SELECTOR, ':not(.f-test-block-experience .undefined) [data-form-id="RESUME_GENERAL_INFO_FORM"] label[for="town.id"] .undefined > span ')
 remote_work_checkbox = (By.NAME, 'remoteWork')
 business_trip_checkbox = (By.NAME, 'businessTrip')
