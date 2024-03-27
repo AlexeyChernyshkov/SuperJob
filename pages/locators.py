@@ -28,8 +28,10 @@ field_lastname = (By.NAME, 'person.lastName')
 field_birthdate = (By.CSS_SELECTOR, 'input[name="birthDate"]')
 calendar_birthday = (By.CSS_SELECTOR, '[class="_1yghA WwHMf _2PlM0"]')
 hide_birthday_checkbox = (By.NAME, 'hideBirthday')
-add_photo = (By.CSS_SELECTOR, 'span > button> span')
-add_photo_img = (By.CSS_SELECTOR, 'span > div img')
+add_photo = (By.CSS_SELECTOR, '.f-test-button-Dobavit_foto')
+# add_photo_img = (By.CSS_SELECTOR, 'span > div img')
+add_photo_img = (By.CSS_SELECTOR, '.f-test-clickable-Dobavit_foto')
+add_photo_cancel = (By.CSS_SELECTOR, 'button.f-test-button-Otmenit')
 town = (By.CSS_SELECTOR, '[name="town.id"]:not(.f-test-block-experience [name="town.id"])')
 town_dropdown = (By.CSS_SELECTOR, '.f-test-option-Barnaul')
 remove_town = (By.CSS_SELECTOR, ':not(.f-test-block-experience .undefined) [data-form-id="RESUME_GENERAL_INFO_FORM"] label[for="town.id"] .undefined > span ')
@@ -40,15 +42,16 @@ phone = (By.NAME, 'phone')
 email = (By.NAME, 'contacts.email')
 add_contacts = (By.CSS_SELECTOR, '.f-test-button-Dobavit_kontakty_socseti')
 job_position = (By.NAME, 'position')
+job_dropdown = (By.CSS_SELECTOR, '.f-test-option-Testirovschik')
 salary = (By.NAME, 'salary')
 work_type = (By.ID, 'workType.id-input')
+work_type_dropdown_full = (By.ID, "6")
 volunteer_work = (By.NAME, 'volunteerWork')
 
 # Сохранение резюме
 resume_save_button = (By.CSS_SELECTOR, '.f-test-button-Sohranit:not(.f-test-block-experience .f-test-button-Sohranit)')
 rule_agreement_checkbox = (By.NAME, 'rulesAgreement')
-change_user_agreement_text = (
-By.CSS_SELECTOR, '.f-test-pseudolink-Izmenit_usloviya_i_zaprety_na_obrabotku_personalnyh_dannyh')
+change_user_agreement_text = (By.CSS_SELECTOR, '.f-test-pseudolink-Izmenit_usloviya_i_zaprety_na_obrabotku_personalnyh_dannyh')
 sign_in_button = (By.CSS_SELECTOR, '.f-test-button-Vojti')  # только у неавторизованного юзера
 
 # Раздел "Опыт работы"
