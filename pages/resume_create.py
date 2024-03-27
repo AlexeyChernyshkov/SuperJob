@@ -34,6 +34,9 @@ class ResumeCreate(BasePage):
     def add_photo_img(self):
         return self.find(add_photo_img)
 
+    def add_photo_cancel(self):
+        return self.find(add_photo_cancel)
+
     def town(self):
         return self.find(town)
 
@@ -64,11 +67,17 @@ class ResumeCreate(BasePage):
     def job_position(self):
         return self.find(job_position)
 
+    def job_dropdown(self):
+        return self.find(job_dropdown)
+
     def salary(self):
         return self.find(salary)
 
     def work_type(self):
         return self.find(work_type)
+
+    def work_type_dropdown_full(self):
+        return self.find(work_type_dropdown_full)
 
     def volunteer_work(self):
         return self.find(volunteer_work)
