@@ -36,5 +36,14 @@ class BasePage():
     def wait_text_in_element(self, locator, string):
         return WebDriverWait(self.browser, 10).until(EC.text_to_be_present_in_element(locator, string))
 
+    def wait_element_to_be_clickable(self, locator):
+        return WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(locator))
+
     def top_button_login(self):
         return self.find(top_button_login)
+
+    # тест клика по чек-боксам через js
+    # def check_box_click(self, locator):
+    #     # Клик
+    #     return self.browser.execute_script("arguments[1].click();", locator)
+
