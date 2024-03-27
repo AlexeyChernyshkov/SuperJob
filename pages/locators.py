@@ -115,3 +115,11 @@ filter_form_of_education_courses = (By.XPATH,"//span[@class='f-test-clickable-ti
 filter_complexity_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Uroven_slozhnosti _1Usdr _1aWiZ _2Lgqw']")
 filter_cost_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Stoimost _1Usdr _1aWiZ _2Lgqw']")
 filter_school_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Shkola _1Usdr _1aWiZ _2Lgqw']")
+
+
+# --------------------------Страницв поиска компаний ------------------------------
+the_search_string_clients = (By.XPATH, '//input[@name="key"]')
+filter_region_clients = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Regiony _1Usdr _1aWiZ _2Lgqw']")
+checkbox_open_vacancy = (By.XPATH, "//label[@class='Cq7EX f-test-checkable-withVacanciesFacet f-test-link-Kompanii_s_otkrytymi_vakansiyami _3VOfi']")
+checkbox_attractive_employer = (By.XPATH, "//label[@class='Cq7EX f-test-checkable-awardYearFacet f-test-link-Privlekatelnyj_rabotodatel _3VOfi']")
+checkbox_open_employer = (By.XPATH, '//label[@class="Cq7EX f-test-checkable-transparentEmployer f-test-link-Otkrytyj_rabotodatel _3VOfi"]')
