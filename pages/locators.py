@@ -98,50 +98,42 @@ experience_save_button = (By.CSS_SELECTOR, '.f-test-block-experience .f-test-but
 
 # --------------------------Страница поиска вакансий---------------------------------
 
-filter_region = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                           '3]/div/span/div/div/div/h2')
-filter_solary = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                           '5]/div/span/div/div/div/h2')
-filter_type_bet = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                             '6]/div/span/div/div/div/h2')
-filter_publication = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                                '8]/div/span/div/div/div/h2')
-filter_specialization = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                                   '9]/div/div/span/div/div/div/h2')
-filter_employment = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                               '10]/div/span/div/div/div/h2')
-filter_type_vacancy = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                                 '14]/div/span/div/div/div/h2')
-filter_additional_parameters = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div/div/div/div['
-                                          '17]/div/span/div/div/div/h2')
+filter_region = (By.CSS_SELECTOR, '.f-test-clickable-Regiony')
+filter_solary = (By.CSS_SELECTOR, '.f-test-clickable-Zarplata')
+filter_type_bet = (By.CSS_SELECTOR, '.f-test-clickable-Tip_stavki')
+filter_publication = (By.CSS_SELECTOR, '.f-test-clickable-Period_publikacii')
+filter_specialization = (By.CSS_SELECTOR, '.f-test-clickable-Specializacii')
+filter_employment = (By.CSS_SELECTOR, '.f-test-clickable-Tip_zanyatosti')
+filter_type_vacancy = (By.CSS_SELECTOR, '.f-test-clickable-Tip_vakansii')
+filter_additional_parameters = (By.CSS_SELECTOR, '.f-test-clickable-Dopolnitelnye_parametry')
 
 # --------------------------Страница поиска резюме---------------------------------
 # Строка поиска
 the_search_string_resume = (By.XPATH, '//input[@name="keywords[0][keys]"]')
-filter_region_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Regiony _1Usdr _1aWiZ _2Lgqw']")
-filter_active_applicants_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Aktivnost_soiskatelej _1Usdr _1aWiZ _2Lgqw']")
-filter_specialization_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Specializacii _1Usdr _1aWiZ _2Lgqw']")
-filter_work_experience_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Opyt_raboty _1Usdr _1aWiZ _2Lgqw']")
-filter_age_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Vozrast _1Usdr _1aWiZ _2Lgqw']")
-filter_solary_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Zarplata _1Usdr _1aWiZ _2Lgqw']")
-filter_citizenship_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Grazhdanstvo _1Usdr _1aWiZ _2Lgqw']")
-filter_type_of_congestion_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Tip_zanyatosti _1Usdr _1aWiZ _2Lgqw']")
-filter_language_proficiency_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Vladenie_in_yazykom _1Usdr _1aWiZ _2Lgqw']")
-filter_education_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Obrazovanie _1Usdr _1aWiZ _2Lgqw']")
-filter_driver_license_resume = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Nalichie_prav _1Usdr _1aWiZ _2Lgqw']")
+filter_region_resume = (By.CSS_SELECTOR, ".f-test-clickable-Regiony")
+filter_active_applicants_resume = (By.CSS_SELECTOR, ".f-test-clickable-Aktivnost_soiskatelej")
+filter_specialization_resume = (By.CSS_SELECTOR, ".f-test-clickable-Specializacii")
+filter_work_experience_resume = (By.CSS_SELECTOR, ".f-test-clickable-Opyt_raboty")
+filter_age_resume = (By.CSS_SELECTOR, ".f-test-clickable-Vozrast")
+filter_solary_resume = (By.CSS_SELECTOR, ".f-test-clickable-Zarplata")
+filter_citizenship_resume = (By.CSS_SELECTOR, ".f-test-clickable-Grazhdanstvo")
+filter_type_of_congestion_resume = (By.CSS_SELECTOR, ".f-test-clickable-Tip_zanyatosti")
+filter_language_proficiency_resume = (By.CSS_SELECTOR, ".f-test-clickable-Vladenie_in_yazykom")
+filter_education_resume = (By.CSS_SELECTOR, ".f-test-clickable-Obrazovanie")
+filter_driver_license_resume = (By.CSS_SELECTOR, ".f-test-clickable-Nalichie_prav")
 
 # --------------------------Страница поиска курсы---------------------------------
 
-filter_specialization_courses = (By.XPATH,"//span[@class='f-test-clickable-title f-test-clickable-Specializacii _1Usdr _1aWiZ _2Lgqw']" )
-filter_form_of_education_courses = (By.XPATH,"//span[@class='f-test-clickable-title f-test-clickable-Format_obucheniya _1Usdr _1aWiZ _2Lgqw']")
-filter_complexity_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Uroven_slozhnosti _1Usdr _1aWiZ _2Lgqw']")
-filter_cost_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Stoimost _1Usdr _1aWiZ _2Lgqw']")
-filter_school_courses = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Shkola _1Usdr _1aWiZ _2Lgqw']")
+filter_specialization_courses = (By.CSS_SELECTOR,".f-test-clickable-Specializacii" )
+filter_form_of_education_courses = (By.CSS_SELECTOR,".f-test-clickable-Format_obucheniya")
+filter_complexity_courses = (By.CSS_SELECTOR, ".f-test-clickable-Uroven_slozhnosti")
+filter_cost_courses = (By.CSS_SELECTOR, ".f-test-clickable-Stoimost")
+filter_school_courses = (By.CSS_SELECTOR, ".f-test-clickable-Shkola")
 
 
 # --------------------------Страницв поиска компаний ------------------------------
 the_search_string_clients = (By.XPATH, '//input[@name="key"]')
-filter_region_clients = (By.XPATH, "//span[@class='f-test-clickable-title f-test-clickable-Regiony _1Usdr _1aWiZ _2Lgqw']")
-checkbox_open_vacancy = (By.XPATH, "//label[@class='Cq7EX f-test-checkable-withVacanciesFacet f-test-link-Kompanii_s_otkrytymi_vakansiyami _3VOfi']")
-checkbox_attractive_employer = (By.XPATH, "//label[@class='Cq7EX f-test-checkable-awardYearFacet f-test-link-Privlekatelnyj_rabotodatel _3VOfi']")
-checkbox_open_employer = (By.XPATH, '//label[@class="Cq7EX f-test-checkable-transparentEmployer f-test-link-Otkrytyj_rabotodatel _3VOfi"]')
+filter_region_clients = (By.CSS_SELECTOR, ".f-test-clickable-Regiony")
+checkbox_open_vacancy = (By.CSS_SELECTOR, ".f-test-link-Kompanii_s_otkrytymi_vakansiyami")
+checkbox_attractive_employer = (By.CSS_SELECTOR, ".f-test-link-Privlekatelnyj_rabotodatel")
+checkbox_open_employer = (By.CSS_SELECTOR, ".f-test-link-Otkrytyj_rabotodatel")
