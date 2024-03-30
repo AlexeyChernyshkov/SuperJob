@@ -87,6 +87,7 @@ experience_end_year = (By.CSS_SELECTOR, '[name="dateEnd"] input[name="year"]')
 experience_end_year_dropdown = (By.CSS_SELECTOR, '[class*="dropdown-year"] span:nth-child(1) button')
 
 experience_still_work = (By.ID, 'stillWorking')
+
 experience_responsibility = (By.NAME, 'responsibility')
 experience_achievements = (By.NAME, 'achievements')
 no_work_experience_checkbox = (By.NAME, 'noWorkExperience')
