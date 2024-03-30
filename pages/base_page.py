@@ -23,7 +23,6 @@ class BasePage():
     def text(self):
         return self.browser.text()
 
-
     def send_keys(self, args):
         return self.browser.send_keys(args)
 
@@ -42,8 +41,10 @@ class BasePage():
     def top_button_login(self):
         return self.find(top_button_login)
 
-    # тест клика по чек-боксам через js
-    # def check_box_click(self, locator):
-    #     # Клик
-    #     return self.browser.execute_script("arguments[1].click();", locator)
+    def save_screenshot(self, file_name: str):
+        return self.browser.save_screenshot(f"{file_name}.png")
+
+    def script_click(self, element):
+        return self.browser.execute_script("arguments[0].click();", element)
+
 
