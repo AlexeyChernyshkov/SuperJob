@@ -85,7 +85,7 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
     resume_auth_create_2.add_photo_img().click()
     resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)  # Ожидаем открытия окна загрузки фото
     # Загружаем фото
-    resume_auth_create_2.add_photo_upload().send_keys("D:/Тестирование ПО/TOP_Diplom/tests/Djamal_ava.jpg")
+    resume_auth_create_2.add_photo_upload().send_keys("C:/Users/komra/PycharmProjects\SuperJob/tests/Djamal_ava.jpg")
     resume_auth_create_2.wait_element_to_be_clickable(add_photo_save)
     resume_auth_create_2.add_photo_save().click()
 
