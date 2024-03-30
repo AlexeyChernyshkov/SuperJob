@@ -45,6 +45,7 @@ class BasePage():
         return self.browser.save_screenshot(f"{file_name}.png")
 
     def script_click(self, element):
-        return self.browser.execute_script("arguments[0].click();", element)
+        return self.browser.execute_script("arguments[0].click();", element[0])
 
-
+    def get_value(self, locator):
+        return self.browser.find_element(*locator).get_attribute("value")
