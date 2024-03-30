@@ -5,6 +5,7 @@ from pages.main_page import Autorization_customers
 from pages.base_page import BasePage
 from pages.users import *
 from selenium.common.exceptions import TimeoutException
+from pages.locators import *
 
 import time
 
@@ -80,11 +81,6 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
     # Ожидаем переход к экрану создания резюме после авторизации, проверкой кликабельности элемента
     resume_auth_create_2.wait_element_to_be_clickable(add_photo_img)
 
-    # Открываем окно добавления фото через кнопку
-    resume_auth_create_2.add_photo().click()
-    resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)  # Ожидаем открытия окна загрузки фото
-    resume_auth_create_2.add_photo_cancel().click()
-
     # Открываем окно добавления фото через изображение
     resume_auth_create_2.add_photo_img().click()
     resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)  # Ожидаем открытия окна загрузки фото
@@ -96,6 +92,8 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
     # Заполнение основных незаполненных полей
     resume_auth_create_2.last_name().send_keys("Test-last-name")
     resume_auth_create_2.birthday().send_keys("15.12.1999")
+    if resume_auth_create_2.get_value(town) != "":
+        resume_auth_create_2.remove_town().click()
     resume_auth_create_2.town().send_keys("Барнаул")
     resume_auth_create_2.wait_text_in_element(town_dropdown, "Барнаул")
     resume_auth_create_2.town_dropdown().click()
@@ -141,10 +139,8 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
     resume_auth_create_2.wait_text_in_element(experience_end_year_dropdown, "2024")
     resume_auth_create_2.experience_end_year_dropdown().click()
     # Работа по настоящее время
-    print(resume_auth_create_2.experience_still_work())
-    print(type(resume_auth_create_2.experience_still_work()))
-    # experience_still_work_checkbox = experience_still_work
-    # resume_auth_create_2.experience_still_work_click(experience_still_work_checkbox)
+    # resume_auth_create_2.experience_still_work().click()
+    # # resume_auth_create_2.experience_still_work_click(experience_still_work)
     # assert resume_auth_create_2.experience_end_month().is_enabled(), "not enabled"
     # assert resume_auth_create_2.experience_end_year().is_enabled(), "not enabled"
 
