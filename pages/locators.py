@@ -12,14 +12,6 @@ field_password = (By.XPATH, '//input[@name="password"]')
 # button_login_accept = (By.XPATH, '//button[@class="_129Bc _1L7ad ejaLn PjivS f-test-button-Vojti _26xin"]')
 button_login_accept = (By.CSS_SELECTOR, '.f-test-button-Vojti')
 
-# Строка поиска, у резюме своя строка
-the_search_string = (By.XPATH, '//input[@name="keywords"]')
-#  Кнопка Найти в поисковой строке
-the_search_button = (By.XPATH, '//button[@title="Найти"]')
-# селект в строке поиска
-selection_selector = (By.XPATH, '//button[@id="searchByHintSelect-input"]')
-#  Кнопка Расширенный поиск у фильтров
-button_filter_search = (By.XPATH, '//button[@title="Расширенный поиск"]')
 # ---------------------------Страница с резюме в ЛК---------------------------------
 create_resume = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div[1]/div/div[2]/a[1]/span')
 
@@ -93,8 +85,15 @@ experience_achievements = (By.NAME, 'achievements')
 no_work_experience_checkbox = (By.NAME, 'noWorkExperience')
 experience_save_button = (By.CSS_SELECTOR, '.f-test-block-experience .f-test-button-Sohranit')
 
-# Раздел с доп. параметрами
 
+# Строка поиска, у резюме своя строка
+the_search_string = (By.XPATH, '//input[@name="keywords"]')
+#  Кнопка Найти в поисковой строке
+the_search_button = (By.XPATH, '//button[@title="Найти"]')
+# селект в строке поиска
+selection_selector = (By.XPATH, '//button[@id="searchByHintSelect-input"]')
+#  Кнопка Расширенный поиск у фильтров
+button_filter_search = (By.XPATH, '//button[@title="Расширенный поиск"]')
 
 # --------------------------Страница поиска вакансий---------------------------------
 
@@ -110,6 +109,7 @@ filter_additional_parameters = (By.CSS_SELECTOR, '.f-test-clickable-Dopolnitelny
 # --------------------------Страница поиска резюме---------------------------------
 # Строка поиска
 the_search_string_resume = (By.XPATH, '//input[@name="keywords[0][keys]"]')
+
 filter_region_resume = (By.CSS_SELECTOR, ".f-test-clickable-Regiony")
 filter_active_applicants_resume = (By.CSS_SELECTOR, ".f-test-clickable-Aktivnost_soiskatelej")
 filter_specialization_resume = (By.CSS_SELECTOR, ".f-test-clickable-Specializacii")
@@ -137,3 +137,11 @@ filter_region_clients = (By.CSS_SELECTOR, ".f-test-clickable-Regiony")
 checkbox_open_vacancy = (By.CSS_SELECTOR, ".f-test-link-Kompanii_s_otkrytymi_vakansiyami")
 checkbox_attractive_employer = (By.CSS_SELECTOR, ".f-test-link-Privlekatelnyj_rabotodatel")
 checkbox_open_employer = (By.CSS_SELECTOR, ".f-test-link-Otkrytyj_rabotodatel")
+
+# --------------------------Детальная страница поиска резюме ------------------------------
+
+# --------------------------Детальная страница поиска вакансии ------------------------------
+
+# --------------------------Детальная страница поиска компании ------------------------------
+
+# --------------------------Детальная страница поиска курса ------------------------------
