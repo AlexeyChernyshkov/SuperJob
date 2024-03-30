@@ -4,6 +4,7 @@ from pages.resume_create import *
 from pages.main_page import Autorization_customers
 from pages.base_page import BasePage
 from pages.users import *
+from selenium.common.exceptions import TimeoutException
 
 import time
 
@@ -76,34 +77,76 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
     authorization_2 = Autorization_customers(browser)
     authorization_2.login(username, password)
 
-    # Ожидаем переход к экрану создания резюме после авторизации
-    resume_auth_create_2.wait_element_to_be_clickable(resume_save_button)
-
-    resume_auth_create_2.birthday().send_keys("15.12.1999")
-
-    """Уперся в клик по чек-боксу
-    # resume_auth_create_2.check_box_click(hide_birthday_checkbox)
-    resume_auth_create_2.hide_birthday_checkbox().click()
-    # resume_auth_create_2.remote_work_checkbox().click()
-    # resume_auth_create_2.business_trip_checkbox().click()
-    # resume_auth_create_2.relocate_possibility_checkbox().click()
-    """
+    # Ожидаем переход к экрану создания резюме после авторизации, проверкой кликабельности элемента
+    resume_auth_create_2.wait_element_to_be_clickable(add_photo_img)
 
     # Открываем окно добавления фото через кнопку
     resume_auth_create_2.add_photo().click()
-    resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)
+    resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)  # Ожидаем открытия окна загрузки фото
     resume_auth_create_2.add_photo_cancel().click()
 
     # Открываем окно добавления фото через изображение
     resume_auth_create_2.add_photo_img().click()
-    resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)
-    resume_auth_create_2.add_photo_cancel().click()
+    resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)  # Ожидаем открытия окна загрузки фото
+    # Загружаем фото
+    resume_auth_create_2.add_photo_upload().send_keys("D:/Тестирование ПО/TOP_Diplom/tests/Djamal_ava.jpg")
+    resume_auth_create_2.wait_element_to_be_clickable(add_photo_save)
+    resume_auth_create_2.add_photo_save().click()
 
+    # Заполнение основных незаполненных полей
+    resume_auth_create_2.last_name().send_keys("Test-last-name")
+    resume_auth_create_2.birthday().send_keys("15.12.1999")
+    resume_auth_create_2.town().send_keys("Барнаул")
+    resume_auth_create_2.wait_text_in_element(town_dropdown, "Барнаул")
+    resume_auth_create_2.town_dropdown().click()
     resume_auth_create_2.job_position().send_keys("Тестировщик")
     resume_auth_create_2.wait_text_in_element(job_dropdown, "Тестировщик")
     resume_auth_create_2.salary().send_keys("100000")
     resume_auth_create_2.work_type().click()
     resume_auth_create_2.work_type_dropdown_full().click()
+    resume_auth_create_2.save_screenshot("file_1")
+
+    """Заполнение блока опыта работы"""
+    # Должность
+    resume_auth_create_2.experience_position().send_keys("QA-менеджер")
+    resume_auth_create_2.wait_text_in_element(experience_position_dropdown, "QA-менеджер")
+    resume_auth_create_2.experience_position_dropdown().click()
+    # Название компании
+    resume_auth_create_2.experience_company_title().send_keys("QA-менеджер")
+    resume_auth_create_2.wait_text_in_element(experience_company_title_dropdown, "QA-менеджер")
+    resume_auth_create_2.experience_company_title_dropdown().click()
+    # Сайт компании
+    resume_auth_create_2.experience_company_site().send_keys("https://www.sibirix.ru/")
+    # Город
+    resume_auth_create_2.experience_company_town_remove().click()
+    resume_auth_create_2.experience_company_town().send_keys("Барнаул")
+    resume_auth_create_2.wait_text_in_element(experience_company_town_dropdown, "Барнаул")
+    resume_auth_create_2.experience_company_town_dropdown().click()
+    # Сфера
+    resume_auth_create_2.experience_company_activity().send_keys("Разработка сайтов")
+    # Начало работы
+    resume_auth_create_2.experience_start_month().send_keys("Июль")
+    resume_auth_create_2.wait_text_in_element(experience_start_month_dropdown, "Июль")
+    resume_auth_create_2.experience_start_month_dropdown().click()
+
+    resume_auth_create_2.experience_start_year().send_keys("2023")
+    resume_auth_create_2.wait_text_in_element(experience_start_year_dropdown, "2023")
+    resume_auth_create_2.experience_start_year_dropdown().click()
+    # Окончание работы
+    resume_auth_create_2.experience_end_month().send_keys("Март")
+    resume_auth_create_2.wait_text_in_element(experience_end_month_dropdown, "Март")
+    resume_auth_create_2.experience_end_month_dropdown().click()
+
+    resume_auth_create_2.experience_end_year().send_keys("2024")
+    resume_auth_create_2.wait_text_in_element(experience_end_year_dropdown, "2024")
+    resume_auth_create_2.experience_end_year_dropdown().click()
+    # Работа по настоящее время
+    print(resume_auth_create_2.experience_still_work())
+    print(type(resume_auth_create_2.experience_still_work()))
+    # experience_still_work_checkbox = experience_still_work
+    # resume_auth_create_2.experience_still_work_click(experience_still_work_checkbox)
+    # assert resume_auth_create_2.experience_end_month().is_enabled(), "not enabled"
+    # assert resume_auth_create_2.experience_end_year().is_enabled(), "not enabled"
 
     time.sleep(5)
 
