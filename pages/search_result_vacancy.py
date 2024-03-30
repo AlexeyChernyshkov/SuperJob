@@ -33,9 +33,6 @@ class SearchResultVacancy(BasePage):
     def filter_field_publication(self):
         return self.find(filter_publication)
 
-    def filter_field_publication(self):
-        return self.find(filter_publication)
-
     def filter_field_specialization(self):
         return self.find(filter_specialization)
 
