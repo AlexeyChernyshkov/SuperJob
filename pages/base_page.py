@@ -70,3 +70,5 @@ class BasePage():
 
     def switch_to_window(self, handle):
         return self.browser.switch_to.window(handle)
+
+
