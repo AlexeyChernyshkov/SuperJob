@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 #  Кнопка входа для авторизации
 # top_button_login = (By.XPATH, '//span[@class="_38FKN f-test-link-Vhod"]')
-top_button_login = (By.CSS_SELECTOR, '.f-test-button-Voĭti')
+top_button_login = (By.CSS_SELECTOR, '.f-test-link-Vojti')
 
 #  Поля логин и пароль
 field_username = (By.XPATH, '//input[@name="login"]')
@@ -93,11 +93,12 @@ experience_save_button = (By.CSS_SELECTOR, '.f-test-block-experience .f-test-but
 # Строка поиска, у резюме своя строка
 the_search_string = (By.XPATH, '//input[@name="keywords"]')
 #  Кнопка Найти в поисковой строке
-the_search_button = (By.XPATH, '//button[@title="Найти"]')
+the_search_button = (By.CSS_SELECTOR, '.f-test-button-Najti')
 # селект в строке поиска
-selection_selector = (By.XPATH, '//button[@id="searchByHintSelect-input"]')
+selection_selector = (By.CSS_SELECTOR, '.f-test-select-searchByHintSelect')
 #  Кнопка Расширенный поиск у фильтров
 button_filter_search = (By.XPATH, '//button[@title="Расширенный поиск"]')
+
 
 # --------------------------Страница поиска вакансий---------------------------------
 
@@ -144,9 +145,11 @@ checkbox_open_employer = (By.CSS_SELECTOR, ".f-test-link-Otkrytyj_rabotodatel")
 
 # --------------------------Детальная страница поиска резюме ------------------------------
 
+search_resume = (By.XPATH, '#app .f-test-search-result-item > div:first-child .f-test-link-resume-name')
+
 # --------------------------Детальная страница поиска вакансии ------------------------------
-search_vacancy = (By.XPATH, '#app .f-test-search-result-item > div:first-child .f-test-vacancy-item')
-otklik_vacancy = (By.CSS_SELECTOR, '#app > div > div._1zxix > div._3C7W2 > div > div > div > div._31epc > div._3VMkc._3JfmZ.UnlTV._24EmH._1JdBY > div > div:nth-child(1) > div > div:nth-child(1) > div._3YCmM._1DQP3._1di-S._2Phet._2xX1c.mcGmY._1pNgl.gWbLw._Osp_._1fbLc > div > div.U_en4.MHVLd._3yWJp > div:nth-child(1) > button')
+search_vacancy = (By.CSS_SELECTOR, '#app .f-test-search-result-item > div:first-child .f-test-vacancy-item')
+otklik_vacancy = (By.CSS_SELECTOR, '.f-test-vacancy-base-info div:nth-child(3) .f-test-button-Otkliknutsya')
 button_dizlike = (By.CSS_SELECTOR, '.f-test-button-visibility_off')
 button_like = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div[2]/div/div[2]/div[2]/div/div/div')
 
@@ -154,5 +157,7 @@ button_like = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div/div/div[1]/di
 
 
 # --------------------------Детальная страница поиска компании ------------------------------
+
+
 
 # --------------------------Детальная страница поиска курса ------------------------------
