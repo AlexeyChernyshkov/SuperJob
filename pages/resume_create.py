@@ -103,6 +103,9 @@ class ResumeCreate(BasePage):
     def sign_in_button(self):
         return self.find(sign_in_button)
 
+    def experience_block(self):
+        return self.find(experience_block)
+
     def experience_position(self):
         return self.find(experience_position)
 
@@ -156,9 +159,6 @@ class ResumeCreate(BasePage):
 
     def experience_still_work(self):
         return self.find(experience_still_work)
-
-    def experience_still_work_click(self, *args):
-        return self.script_click(args)
 
     def experience_responsibility(self):
         return self.find(experience_responsibility)
