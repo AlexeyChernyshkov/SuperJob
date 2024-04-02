@@ -30,7 +30,12 @@ def test_detail_vacancy(browser, username, password):
     resume_auth.search_vacancy().click()
     time.sleep(3)
     # Тут надо понять как переключаться между вкладками браузера
-    # resume_auth.save_screenshot('vacancy')
+    handles = resume_auth.window_handles()
+    resume_detail_window = handles[1]
+    resume_auth.switch_to_window(resume_detail_window)
+
+    resume_auth.save_screenshot('vacancy')
+
     # time.sleep(1)
 
 
