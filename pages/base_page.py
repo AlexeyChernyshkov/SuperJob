@@ -38,14 +38,29 @@ class BasePage():
     def wait_element_to_be_clickable(self, locator):
         return WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(locator))
 
+    def wait_visibility_of_element_located(self, locator):
+        return WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(locator))
+
+    def wait_presence_of_element_located(self, locator):
+        return WebDriverWait(self.browser, 10).until(EC.presence_of_element_located(locator))
+
     def top_button_login(self):
         return self.find(top_button_login)
 
+    def notifications(self):
+        return self.find(notifications)
+
+    def top_account(self):
+        return self.find(top_account)
+
     def save_screenshot(self, file_name: str):
-        return self.browser.save_screenshot(f"{file_name}.png")
+        return self.browser.save_screenshot(f"screenshots/{file_name}.png")
 
     def script_click(self, element):
-        return self.browser.execute_script("arguments[0].click();", element[0])
+        return self.browser.execute_script("arguments[0].click();", element)
+
+    def script_scroll(self, element):
+        return self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def get_value(self, locator):
         return self.browser.find_element(*locator).get_attribute("value")

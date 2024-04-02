@@ -19,6 +19,7 @@ def browser():
 chrome_options = Options()
 chrome_options.page_load_strategy = 'eager' #Открываем странцу в режиме запуска "Жаждящий", чтобы не ждать скриптов
 # chrome_options.add_argument("--headless")
+chrome_options.add_argument('log-level=3')
 
 
 
