@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 #  Кнопка входа для авторизации
 # top_button_login = (By.XPATH, '//span[@class="_38FKN f-test-link-Vhod"]')
-top_button_login = (By.CSS_SELECTOR, '.f-test-link-Vhod')
+top_button_login = (By.CSS_SELECTOR, '.f-test-button-Voĭti')
 
 #  Поля логин и пароль
 field_username = (By.XPATH, '//input[@name="login"]')
@@ -11,6 +11,8 @@ field_password = (By.XPATH, '//input[@name="password"]')
 # Кнопка Войти
 # button_login_accept = (By.XPATH, '//button[@class="_129Bc _1L7ad ejaLn PjivS f-test-button-Vojti _26xin"]')
 button_login_accept = (By.CSS_SELECTOR, '.f-test-button-Vojti')
+notifications = (By.CSS_SELECTOR, 'f-test-button-notifications')
+top_account = (By.CSS_SELECTOR, 'f-test-tooltip-Nastrojki_Vyjti')
 
 # ---------------------------Страница с резюме в ЛК---------------------------------
 create_resume = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div[1]/div/div[2]/a[1]/span')
@@ -54,6 +56,8 @@ change_user_agreement_text = (By.CSS_SELECTOR, '.f-test-pseudolink-Izmenit_uslov
 sign_in_button = (By.CSS_SELECTOR, '.f-test-button-Vojti')  # только у неавторизованного юзера
 
 # Раздел "Опыт работы"
+experience_block = (By.CSS_SELECTOR, '.f-test-block-experience')
+
 experience_position = (By.NAME, 'experience.position')
 experience_position_dropdown = (By.CSS_SELECTOR, '[class*="dropdown-experience"] span:nth-child(1) button')
 
