@@ -64,3 +64,9 @@ class BasePage():
 
     def get_value(self, locator):
         return self.browser.find_element(*locator).get_attribute("value")
+
+    def window_handles(self):
+        return self.browser.window_handles
+
+    def switch_to_window(self, handle):
+        return self.browser.switch_to.window(handle)
