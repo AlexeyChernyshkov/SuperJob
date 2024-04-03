@@ -155,8 +155,13 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
         resume_auth_create_2.script_scroll(resume_auth_create_2.salary())
     finally:
         resume_auth_create_2.save_screenshot("file_2")
-        time.sleep(3)
 
+    # try:
+    #     resume_auth_create_2.resume_save_button().click()
+    #     resume_auth_create_2.wait_url_matches('www.superjob.ru/user/resume/')
+    #
+    # finally:
+    #     resume_auth_create_2.save_screenshot('file_3')
 
 # def test_resume_completion(browser):
 #     resume_completion = ResumeCreate(browser, resume_create_url)
