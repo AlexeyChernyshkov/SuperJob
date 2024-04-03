@@ -44,6 +44,9 @@ class BasePage():
     def wait_presence_of_element_located(self, locator):
         return WebDriverWait(self.browser, 10).until(EC.presence_of_element_located(locator))
 
+    def wait_url_matches(self, url):
+        return WebDriverWait(self.browser, 10).until(EC.url_matches(url))
+
     def top_button_login(self):
         return self.find(top_button_login)
 

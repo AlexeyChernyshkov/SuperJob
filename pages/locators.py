@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 #  Кнопка входа для авторизации
 # top_button_login = (By.XPATH, '//span[@class="_38FKN f-test-link-Vhod"]')
-top_button_login = (By.CSS_SELECTOR, '.f-test-link-Vojti')
+top_button_login = (By.CSS_SELECTOR, '.f-test-button-Voĭti')
 
 #  Поля логин и пароль
 field_username = (By.XPATH, '//input[@name="login"]')
@@ -98,6 +98,17 @@ the_search_button = (By.CSS_SELECTOR, '.f-test-button-Najti')
 selection_selector = (By.CSS_SELECTOR, '.f-test-select-searchByHintSelect')
 #  Кнопка Расширенный поиск у фильтров
 button_filter_search = (By.XPATH, '//button[@title="Расширенный поиск"]')
+
+# --------------------------Мои резюме----------------------------------------------
+
+update_resumes_btn = (By.CSS_SELECTOR, '.f-test-button-Obnovit_vse_rezyume')
+create_resume_btn = (By.CSS_SELECTOR, 'f-test-button-Sozdat_rezyume')
+resume_more_options_kebab = (By.CSS_SELECTOR, '.f-test-resume_card .f-test-button-more_vert')
+vision_change_btn = (By.CSS_SELECTOR, '.f-test-resume_card .f-test-clickable-Izmenit')
+auto_response_checkbox = (By.CSS_SELECTOR, '[name*="resumeCardAutoResponse"]')
+auto_response_settings_btn = (By.CSS_SELECTOR, '.f-test-clickable-Nastroit')
+up_automate_btn = (By.CSS_SELECTOR, '.f-test-button-Podnimat_avtomaticheski')
+go_to_search_btn = (By.CSS_SELECTOR, '.f-test-button-Perejti_k_poisku')
 
 
 # --------------------------Страница поиска вакансий---------------------------------
