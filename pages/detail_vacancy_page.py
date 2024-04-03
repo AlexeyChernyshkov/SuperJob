@@ -25,3 +25,5 @@ class DetailPageVacancy(BasePage):
     def button_like(self):
         return self.find(button_like)
 
+    def vacancy(self):
+        return self.find(vacancy)

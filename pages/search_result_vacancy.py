@@ -44,3 +44,4 @@ class SearchResultVacancy(BasePage):
 
     def filter_field_additional_parameters(self):
         return self.find(filter_additional_parameters)
+

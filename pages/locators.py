@@ -95,7 +95,8 @@ the_search_string = (By.XPATH, '//input[@name="keywords"]')
 #  Кнопка Найти в поисковой строке
 the_search_button = (By.CSS_SELECTOR, '.f-test-button-Najti')
 # селект в строке поиска
-selection_selector = (By.CSS_SELECTOR, '.f-test-select-searchByHintSelect')
+# selection_selector = (By.CSS_SELECTOR, '.f-test-select-searchByHintSelect')
+selection_selector = (By.XPATH, '/html/body/div[1]/div/div[1]/div[2]/div/div[2]/form/div[2]/div/div/div[1]/button/div')
 #  Кнопка Расширенный поиск у фильтров
 button_filter_search = (By.XPATH, '//button[@title="Расширенный поиск"]')
 
@@ -157,10 +158,13 @@ checkbox_open_employer = (By.CSS_SELECTOR, ".f-test-link-Otkrytyj_rabotodatel")
 # --------------------------Детальная страница поиска резюме ------------------------------
 
 search_resume = (By.XPATH, '#app .f-test-search-result-item > div:first-child .f-test-link-resume-name')
-
+test = (By.XPATH, '//div[@id="searchByHintSelect-item-1"]')
+resume = (By.XPATH, '/html/body/div[2]/div/div[1]/div[4]/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/div/div/div/div[1]/div/div/div[1]/div[2]/div[2]/a/div/div[1]/div[1]/span')
 # --------------------------Детальная страница поиска вакансии ------------------------------
-search_vacancy = (By.CSS_SELECTOR, '#app .f-test-search-result-item > div:first-child .f-test-vacancy-item')
-otklik_vacancy = (By.CSS_SELECTOR, '.f-test-vacancy-base-info div:nth-child(3) .f-test-button-Otkliknutsya')
+# search_vacancy = (By.CSS_SELECTOR, '#app .f-test-search-result-item > div:first-child .f-test-vacancy-item')
+vacancy = (By.XPATH, '/html/body/div[1]/div/div[1]/div[4]/div/div[2]/div[1]/div[1]/div/div[1]/div/div/div/div/div[1]/div/div[2]/div/div[1]/div[1]/div/span/a')
+search_vacancy = (By.XPATH, '/html/body/div[1]/div/div[1]/div[4]/div/div[2]/div[1]/div[1]/div/div[1]/div')
+otklik_vacancy = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div[2]/div/div[1]/div[1]/button')
 button_dizlike = (By.CSS_SELECTOR, '.f-test-button-visibility_off')
 button_like = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div/div/div[1]/div[1]/div/div[1]/div/div[1]/div[2]/div/div[2]/div[2]/div/div/div')
 

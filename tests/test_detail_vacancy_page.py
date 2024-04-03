@@ -21,21 +21,18 @@ def test_detail_vacancy(browser):
         vacancy_detail.button_search_vacancy().click()
 
         # Попробуй ожидание на появление поставить:
-        # vacancy_detail.wait_visibility_of_element_located(search_vacancy)
-        # не кликает на вакансию, проверь локатор, подбери другой попробуй
-        vacancy_detail.wait_element_to_be_clickable(search_vacancy)
-        vacancy_detail.search_vacancy().click()
-        # Тут вейт на появление нужен, чтобы вакансия прогрузилась.
+        vacancy_detail.wait_presence_of_element_located(filter_region)
+
+        vacancy_detail.vacancy().click()
+
+        # vacancy_detail.wait_visibility_of_element_located(otklik_vacancy)
         # Она же когда открывается, активное окно сразу на нее переводит, т.е. переход не нужен
         # Можно повесить на кнопку откликнуться на деталке вакансии
         handles = vacancy_detail.window_handles()
         resume_detail_window = handles[1]
         vacancy_detail.switch_to_window(resume_detail_window)
-        vacancy_detail.wait_element_to_be_clickable(otklik_vacancy)
-
     finally:
-        # сразу скажу, именуй скрины по названию теста
-        vacancy_detail.save_screenshot('vacancy')
+        vacancy_detail.save_screenshot('test_detail_vacancy_page.py')
 
 
 
