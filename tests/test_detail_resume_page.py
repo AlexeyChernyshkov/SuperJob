@@ -16,14 +16,17 @@ def test_detail_resume(browser):
     resume_detail.open()
 
     try:
-        # resume_detail.selector()
-        # resume_detail.send_keys("Резюме")
+        resume_detail.wait_element_to_be_clickable(selection_selector)
+        resume_detail.select_use().click()
+        resume_detail.wait_visibility_of_element_located(test)
+
+        resume_detail.test().click()
 
         resume_detail.search_string().send_keys('Тестировщик')
         resume_detail.button_search_resume().click()
-        time.sleep(3)
-        resume_detail.wait_element_to_be_clickable(search_vacancy)
+        resume_detail.wait_visibility_of_element_located(filter_region)
         resume_detail.search_resume().click()
+
         handles = resume_detail.window_handles()
         resume_detail_window = handles[1]
         resume_detail.switch_to_window(resume_detail_window)
@@ -31,7 +34,7 @@ def test_detail_resume(browser):
 
 
     finally:
-        resume_detail.save_screenshot('resume')
+        resume_detail.save_screenshot('test_detail_resume_page.py')
 
 
 
