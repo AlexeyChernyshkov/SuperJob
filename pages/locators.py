@@ -18,11 +18,22 @@ top_account = (By.CSS_SELECTOR, 'f-test-tooltip-Nastrojki_Vyjti')
 create_resume = (By.XPATH, '//*[@id="app"]/div/div[1]/div[5]/div/div[1]/div/div[2]/a[1]/span')
 
 # ---------------------------Страница создания резюме---------------------------------
+# Обязательные поля
+name_required = (By.CSS_SELECTOR, 'label[for="person.firstName"]+.f-test-formField-error')
+birthday_required = (By.CSS_SELECTOR, '.f-test-formField-error.f-test-formField-birthDate')
+town_required = (By.CSS_SELECTOR, 'label[for="town.id"]+.f-test-formField-error')
+phone_required = (By.CSS_SELECTOR, 'label[for="phone"]+.f-test-formField-error')
+email_required = (By.CSS_SELECTOR, 'label[for="contacts.email"]+.f-test-formField-error')
+position_required = (By.CSS_SELECTOR, 'label[for="position"]+.f-test-formField-error')
+
+# Поля блока основной информации
 import_resume = (By.CSS_SELECTOR, '.f-test-button-Import_rezyume')
-field_name = By.NAME, 'person.firstName'
+field_name = (By.NAME, 'person.firstName')
+remove_field_name =(By.CSS_SELECTOR, 'label[for="person.firstName"] .undefined > span ')
 field_lastname = (By.NAME, 'person.lastName')
+remove_field_lastname = (By.CSS_SELECTOR, 'label[for="person.lastName"] .undefined > span ')
 field_birthdate = (By.CSS_SELECTOR, 'input[name="birthDate"]')
-calendar_birthday = (By.CSS_SELECTOR, '[class="_1yghA WwHMf _2PlM0"]')
+calendar_birthday = (By.CSS_SELECTOR, 'label[for="birthDate"] div:nth-child(2) div')
 hide_birthday_checkbox = (By.NAME, 'hideBirthday')
 
 add_photo = (By.CSS_SELECTOR, '.f-test-button-Dobavit_foto')
@@ -40,10 +51,13 @@ remote_work_checkbox = (By.NAME, 'remoteWork')
 business_trip_checkbox = (By.NAME, 'businessTrip')
 relocate_possibility_checkbox = (By.NAME, 'relocatePossibility')
 phone = (By.NAME, 'phone')
+remove_phone = (By.CSS_SELECTOR, 'label[for="phone"] .undefined > span')
 email = (By.NAME, 'contacts.email')
+remove_email = (By.CSS_SELECTOR, 'label[for="contacts.email"] .undefined > span')
 add_contacts = (By.CSS_SELECTOR, '.f-test-button-Dobavit_kontakty_socseti')
 job_position = (By.NAME, 'position')
 job_dropdown = (By.CSS_SELECTOR, '[class*="dropdown-position"] span:nth-child(1) button')
+remove_job_position = (By.CSS_SELECTOR, 'label[for="position"] .undefined > span')
 salary = (By.NAME, 'salary')
 work_type = (By.ID, 'workType.id-input')
 work_type_dropdown_full = (By.ID, "6")
@@ -51,6 +65,7 @@ volunteer_work = (By.NAME, 'volunteerWork')
 
 # Сохранение резюме
 resume_save_button = (By.CSS_SELECTOR, '.f-test-button-Sohranit:not(.f-test-block-experience .f-test-button-Sohranit)')
+successful_resume_create = (By.ID, 'newResume')
 rule_agreement_checkbox = (By.NAME, 'rulesAgreement')
 change_user_agreement_text = (By.CSS_SELECTOR, '.f-test-pseudolink-Izmenit_usloviya_i_zaprety_na_obrabotku_personalnyh_dannyh')
 sign_in_button = (By.CSS_SELECTOR, '.f-test-button-Vojti')  # только у неавторизованного юзера

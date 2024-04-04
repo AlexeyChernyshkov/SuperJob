@@ -10,14 +10,40 @@ class ResumeCreate(BasePage):
     def __init__(self, browser, url):
         super().__init__(browser, url)
 
+    '''Сообщение об обязательности поля'''
+    def name_required(self):
+        return self.find(name_required)
+
+    def birthday_required(self):
+        return self.find(birthday_required)
+
+    def town_required(self):
+        return self.find(town_required)
+
+    def phone_required(self):
+        return self.find(phone_required)
+
+    def email_required(self):
+        return self.find(email_required)
+
+    def position_required(self):
+        return self.find(position_required)
+
     def import_button(self):
         return self.find(import_resume)
 
+    '''Поля блока основной информации'''
     def name(self):
         return self.find(field_name)
 
+    def remove_field_name(self):
+        return self.find(remove_field_name)
+
     def last_name(self):
         return self.find(field_lastname)
+
+    def remove_field_lastname(self):
+        return self.find(remove_field_lastname)
 
     def birthday(self):
         return self.find(field_birthdate)
@@ -67,8 +93,14 @@ class ResumeCreate(BasePage):
     def phone(self):
         return self.find(phone)
 
+    def remove_phone(self):
+        return self.find(remove_phone)
+
     def email(self):
         return self.find(email)
+
+    def remove_email(self):
+        return self.find(remove_email)
 
     def add_contacts(self):
         return self.find(add_contacts)
@@ -78,6 +110,9 @@ class ResumeCreate(BasePage):
 
     def job_dropdown(self):
         return self.find(job_dropdown)
+
+    def remove_job_position(self):
+        return self.find(remove_job_position)
 
     def salary(self):
         return self.find(salary)
@@ -91,8 +126,12 @@ class ResumeCreate(BasePage):
     def volunteer_work(self):
         return self.find(volunteer_work)
 
+    '''Блок сохранения резюме'''
     def resume_save_button(self):
         return self.find(resume_save_button)
+
+    def successful_resume_create(self):
+        return self.find(successful_resume_create)
 
     def rule_agreement_checkbox(self):
         return self.find(rule_agreement_checkbox)
@@ -103,6 +142,7 @@ class ResumeCreate(BasePage):
     def sign_in_button(self):
         return self.find(sign_in_button)
 
+    '''Раздел опыта работы'''
     def experience_block(self):
         return self.find(experience_block)
 

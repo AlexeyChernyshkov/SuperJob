@@ -29,6 +29,9 @@ class BasePage():
     def click(self):
         return self.browser.click()
 
+    def clear(self):
+        return self.browser.clear()
+
     def is_enabled(self):
         return self.browser.is_enabled()
 
