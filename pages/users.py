@@ -1,5 +1,5 @@
 #  Данные пользователя
-test_user_customers = "qa-test-hrom+03@yandex.ru"
+test_user_customers = "qa-test-hrom+04@yandex.ru"
 test_password_user = "An7523Hw"
 
 # # Данные компании
