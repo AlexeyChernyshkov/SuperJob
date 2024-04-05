@@ -1,4 +1,6 @@
 """Страница с методами, которые буду общими для всех страниц"""
+import time
+
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
@@ -55,8 +57,10 @@ class BasePage():
     def wait_url_matches(self, url):
         return WebDriverWait(self.browser, 10).until(EC.url_matches(url))
 
+
     def implicitly_wait(self):
         return self.browser.implicitly_wait(5)
+
 
     def top_button_login(self):
         return self.find(top_button_login)

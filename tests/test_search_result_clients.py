@@ -1,3 +1,4 @@
+#  Тест на проверку основного функционала на странице поиска компаний
 from pages.search_result_clients import *
 
 
@@ -17,6 +18,6 @@ def test_field_exist(browser):
 
     assert search_result.filter_checkbox_1().is_displayed, f"Чекбокс компаний с открытыми вакансиями не найден"
 
-    assert search_result.filter_checkbox_2().is_displayed, f"Чекбокс привлекателеный работодатель не найден"
+    assert search_result.filter_checkbox_2().is_displayed, f"Чекбокс привлекательный работодатель не найден"
 
     assert search_result.filter_checkbox_3().is_displayed, f"Чекбокс открытый работодатель не найден"

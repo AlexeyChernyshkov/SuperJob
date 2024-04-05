@@ -1,15 +1,7 @@
-import pytest
+# Тут тест проверки открытия страницы вакансии и с фиксацией итогового результата
 
 from pages.detail_vacancy_page import *
-from pages.main_page import Autorization_customers
-from pages.base_page import BasePage
-from pages.users import *
-from selenium.common.exceptions import TimeoutException
 from pages.locators import *
-
-import time
-from selenium.webdriver.common.keys import Keys
-
 
 def test_detail_vacancy(browser):
     vacancy_detail = DetailPageVacancy(browser, detail_vacancy_url)
@@ -20,18 +12,17 @@ def test_detail_vacancy(browser):
         vacancy_detail.search_string().send_keys('Python')
         vacancy_detail.button_search_vacancy().click()
 
-        # Попробуй ожидание на появление поставить:
+        # Ожидаем прогрузки страницы для дальнейших действий
         vacancy_detail.wait_presence_of_element_located(filter_region)
-
         vacancy_detail.vacancy().click()
 
         # vacancy_detail.wait_visibility_of_element_located(otklik_vacancy)
-        # Она же когда открывается, активное окно сразу на нее переводит, т.е. переход не нужен
-        # Можно повесить на кнопку откликнуться на деталке вакансии
+        # Переход на активную вкладку для фиксации результатов
         handles = vacancy_detail.window_handles()
         resume_detail_window = handles[1]
         vacancy_detail.switch_to_window(resume_detail_window)
     finally:
+        # Фиксация результатов
         vacancy_detail.save_screenshot('test_detail_vacancy_page.py')
 
 

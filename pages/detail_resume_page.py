@@ -1,9 +1,10 @@
-import select
+# Тут содержаться методы для детальной страницы поиска резюме
 
 from pages.base_page import BasePage
 from pages.locators import *
 
 detail_resume_url = 'https://russia.superjob.ru/'
+
 
 class DetailPageResume(BasePage):
 
@@ -19,9 +20,8 @@ class DetailPageResume(BasePage):
     def search_resume(self):
         return self.find(resume)
 
-# ужна функция н выбор в селекте нужного значения
     def select_use(self):
         return self.find(selection_selector)
 
-    def test(self):
-        return self.find(test)
+    def select_resume(self):
+        return self.find(select_resume)

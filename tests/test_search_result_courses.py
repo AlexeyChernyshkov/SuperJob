@@ -1,3 +1,4 @@
+#  Тест на проверку основного функционала на странице поиска курсов
 from pages.search_result_courses import *
 
 
