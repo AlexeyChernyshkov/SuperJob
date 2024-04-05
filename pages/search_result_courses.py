@@ -18,6 +18,8 @@ class SearchResultCourses(BasePage):
     def title(self):
         return self.find(selection_selector).text
 
+    ''' раздел Фильтров '''
+
     def filter_specialization(self):
         return self.find(filter_specialization_courses)
 

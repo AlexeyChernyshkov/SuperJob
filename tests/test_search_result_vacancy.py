@@ -1,3 +1,4 @@
+#  Тест на проверку основного функционала на странице поиска вакансий
 from pages.search_result_vacancy import *
 
 

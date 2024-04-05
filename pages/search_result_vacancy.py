@@ -18,6 +18,8 @@ class SearchResultVacancy(BasePage):
     def title(self):
         return self.find(selection_selector).text
 
+    ''' раздел Фильтров '''
+
     def filter_field_button(self):
         return self.find(button_filter_search)
 

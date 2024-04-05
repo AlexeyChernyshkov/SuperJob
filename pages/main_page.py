@@ -41,7 +41,8 @@ class MainPageMenu(BasePage):
         return self.compare_url(element)
 
 
-#  Класс для авторизации компанией
+#  Класс для авторизации компанией пока не актуально
+
 # class Autorization_ccompany:
 #     def __init__(self, driver):
 #         self.field_username = driver.find_element(*field_username)
