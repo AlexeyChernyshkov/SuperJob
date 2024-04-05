@@ -18,7 +18,7 @@ def browser():
 
 chrome_options = Options()
 chrome_options.page_load_strategy = 'eager' #Открываем странцу в режиме запуска "Жаждящий", чтобы не ждать скриптов
-# chrome_options.add_argument("--headless")
+chrome_options.add_argument("--headless")
 chrome_options.add_argument('log-level=3')
 
 
@@ -30,7 +30,7 @@ search_result_resumes_url = 'https://www.superjob.ru/resume/search_resume.html'
 search_result_clients_url = 'https://russia.superjob.ru/clients/'
 search_result_courses_url = 'https://www.superjob.ru/kursy/'
 
-user_resume_url = 'https://www.superjob.ru/user/resume/'
+# user_resume_url = 'https://www.superjob.ru/user/resume/'
 # resume_create_url = 'https://www.superjob.ru/resume/create/'
 
 detail_vacancy_page_url = 'https://www.superjob.ru/vakansii/'
