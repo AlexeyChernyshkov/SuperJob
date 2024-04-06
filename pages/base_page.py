@@ -21,6 +21,9 @@ class BasePage():
     def close(self):
         self.browser.close()
 
+    def quit(self):
+        self.browser.quit()
+
     def find(self, args):
         return self.browser.find_element(*args)
 
@@ -64,27 +67,28 @@ class BasePage():
 
     '''Waits'''
     def wait_text_in_element(self, locator, string):
-        return WebDriverWait(self.browser, 10).until(EC.text_to_be_present_in_element(locator, string))
+        return WebDriverWait(self.browser, 5).until(EC.text_to_be_present_in_element(locator, string))
 
     def wait_element_to_be_clickable(self, locator):
-        return WebDriverWait(self.browser, 10).until(EC.element_to_be_clickable(locator))
+        return WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(locator))
 
     def wait_visibility_of_element_located(self, locator):
-        return WebDriverWait(self.browser, 10).until(EC.visibility_of_element_located(locator))
+        return WebDriverWait(self.browser, 5).until(EC.visibility_of_element_located(locator))
 
     def wait_presence_of_element_located(self, locator):
-        return WebDriverWait(self.browser, 10).until(EC.presence_of_element_located(locator))
+        return WebDriverWait(self.browser, 5).until(EC.presence_of_element_located(locator))
 
     def wait_url_matches(self, url):
-        return WebDriverWait(self.browser, 10).until(EC.url_matches(url))
+        return WebDriverWait(self.browser, 5).until(EC.url_matches(url))
 
+    def wait_text_to_be_present_in_element_value(self, locator, string):
+        return WebDriverWait(self.browser, 5).until(EC.text_to_be_present_in_element_value(locator, string))
 
     def wait_visibility_of(self, element):
-        return WebDriverWait(self.browser, 10).until(EC.visibility_of(element))
+        return WebDriverWait(self.browser, 5).until(EC.visibility_of(element))
 
     def implicitly_wait(self):
         return self.browser.implicitly_wait(5)
-
 
     def top_button_login(self):
         return self.find(top_button_login)
@@ -96,6 +100,9 @@ class BasePage():
         return self.find(top_account)
 
     '''Взаимодействие с браузером'''
+    def session_id(self):
+        return self.browser.session_id
+
     def window_handles(self):
         return self.browser.window_handles
 
@@ -113,10 +120,14 @@ class BasePage():
 
     def get_page_url(self):
         handles = self.window_handles()
-        page = handles[1]
-        self.switch_to_window(page)
-        url = self.current_url()
-        return url
+        if len(handles) == 1:
+            url = self.current_url()
+            return url
+        else:
+            page = handles[1]
+            self.switch_to_window(page)
+            url = self.current_url()
+            return url
 
     def compare_url(self, locator):
         href = self.get_href(locator)
@@ -131,3 +142,4 @@ class BasePage():
             return True
         else:
             return False
+

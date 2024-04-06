@@ -192,6 +192,8 @@ filter_region_clients = (By.CSS_SELECTOR, ".f-test-clickable-Regiony")
 checkbox_open_vacancy = (By.CSS_SELECTOR, ".f-test-link-Kompanii_s_otkrytymi_vakansiyami")
 checkbox_attractive_employer = (By.CSS_SELECTOR, ".f-test-link-Privlekatelnyj_rabotodatel")
 checkbox_open_employer = (By.CSS_SELECTOR, ".f-test-link-Otkrytyj_rabotodatel")
+vacancy_btn = (By.CSS_SELECTOR, '.f-test-link-Vakansii')
+
 
 # --------------------------Детальная страница поиска резюме ------------------------------
 
@@ -199,7 +201,8 @@ search_resume = (By.XPATH, '#app .f-test-search-result-item > div:first-child .f
 select_resume = (By.XPATH, '//div[@id="searchByHintSelect-item-1"]')
 select_resume_clients = (By.XPATH, '//div[@id="searchByHintSelect-item-2"]')
 select_resume_courses = (By.XPATH, '//div[@id="searchByHintSelect-item-3"]')
-resume = (By.XPATH, '/html/body/div[2]/div/div[1]/div[4]/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/div/div/div/div[1]/div/div/div[1]/div[2]/div[2]/a/div/div[1]/div[1]/span')
+# resume = (By.XPATH, '//*[@id="app"]/div/div[1]/div[4]/div/div[2]/div[2]/div[2]/div[1]/div/div[1]/div/div/div/div[1]/div/div/div[1]/div[2]/div[2]/a/div/div[1]/div[1]/span')
+resume = (By.CSS_SELECTOR, '#app .f-test-search-result-item > div:first-child .f-test-link-resume-name')
 
 # --------------------------Детальная страница поиска вакансии ------------------------------
 # search_vacancy = (By.CSS_SELECTOR, '#app .f-test-search-result-item > div:first-child .f-test-vacancy-item')
