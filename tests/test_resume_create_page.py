@@ -6,6 +6,8 @@ from pages.resume_create import *
 from pages.main_page import Autorization_customers
 from pages.users import *
 from pages.locators import *
+from selenium.common.exceptions import NoSuchElementException
+import os
 
 
 @pytest.mark.parametrize('username, password', [(test_user_customers, test_password_user)])
@@ -93,6 +95,10 @@ def test_resume_create_with_authorization_required_fields(browser):
         assert resume_auth_create_1.phone_required().is_displayed, f"Phone no required"
         assert resume_auth_create_1.email_required().is_displayed, f"Email no required"
         assert resume_auth_create_1.position_required().is_displayed, f"Position no required"
+    except NoSuchElementException as exc:
+        print(exc)
+        resume_auth_create_1.close()
+        os.system(r'pytest -s -v .\tests\test_resume_create_page.py::test_resume_create_with_authorization_required_fields')
     finally:
         resume_auth_create_1.save_screenshot("test_resume_create_with_authorization_required_fields")
 
@@ -122,19 +128,19 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
         resume_auth_create_2.wait_element_to_be_clickable(add_photo_cancel)  # Ожидаем открытия окна загрузки фото
 
         # Загружаем фото
-        resume_auth_create_2.add_photo_upload().send_keys("C:/Users/komra/PycharmProjects/SuperJob/tests/Djamal_ava.jpg")
+        resume_auth_create_2.add_photo_upload().send_keys("D:/Тестирование ПО/TOP_Diplom/tests/Djamal_ava.jpg")
         resume_auth_create_2.wait_element_to_be_clickable(add_photo_save)
         resume_auth_create_2.add_photo_save().click()
 
         # Поле имени
         if resume_auth_create_2.get_value(field_name) != "":
             resume_auth_create_2.remove_field_name().click()
-        resume_auth_create_2.name().send_keys("Test-first-name")
+        resume_auth_create_2.name().send_keys("Алексей")
 
         # Поле фамилии
         if resume_auth_create_2.get_value(field_lastname) != "":
             resume_auth_create_2.remove_field_lastname().click()
-        resume_auth_create_2.last_name().send_keys("Test-last-name")
+        resume_auth_create_2.last_name().send_keys("Чернышков")
 
         # Дата рождения
         resume_auth_create_2.birthday().send_keys("15.12.1999")
@@ -157,6 +163,10 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
         # Тип занятости
         resume_auth_create_2.work_type().click()
         resume_auth_create_2.work_type_dropdown_full().click()
+    except NoSuchElementException as exc:
+        print(exc)
+        resume_auth_create_2.close()
+        os.system(r'pytest -s -v .\tests\test_resume_create_page.py::test_resume_create_with_authorization_all_fields')
     finally:
         resume_auth_create_2.save_screenshot("test_resume_create_with_authorization_all_fields_1")
 

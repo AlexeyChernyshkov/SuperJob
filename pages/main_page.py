@@ -30,12 +30,6 @@ class MainPageMenu(BasePage):
     def kebab_menu(self):
         return self.find(kebab_menu)
 
-    def najti_rabotu(self):
-        return self.find(najti_rabotu)
-
-    def razmestit_resyume(self):
-        return self.find(razmestit_resyume)
-
     def main_menu(self, element):
         self.kebab_menu().click()
         return self.compare_url(element)
