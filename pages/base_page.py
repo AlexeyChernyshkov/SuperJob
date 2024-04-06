@@ -14,6 +14,7 @@ class BasePage():
         self.url = url
         # self.driver = driver
 
+    '''Основные методы'''
     def open(self):
         self.browser.get(self.url)
 
@@ -42,6 +43,26 @@ class BasePage():
     def is_enabled(self):
         return self.browser.is_enabled()
 
+    def save_screenshot(self, file_name: str):
+        return self.browser.save_screenshot(f"screenshots/{file_name}.png")
+
+    def script_click(self, element):
+        return self.browser.execute_script("arguments[0].click();", element)
+
+    def script_scroll(self, element):
+        return self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+
+    def get_value(self, locator):
+        return self.browser.find_element(*locator).get_attribute("value")
+
+    def get_href(self, locator):
+        return self.browser.find_element(*locator).get_attribute("href")
+
+    @staticmethod
+    def cut_string(string):
+        return string[string.find(".") + 1:]
+
+    '''Waits'''
     def wait_text_in_element(self, locator, string):
         return WebDriverWait(self.browser, 10).until(EC.text_to_be_present_in_element(locator, string))
 
@@ -58,6 +79,9 @@ class BasePage():
         return WebDriverWait(self.browser, 10).until(EC.url_matches(url))
 
 
+    def wait_visibility_of(self, element):
+        return WebDriverWait(self.browser, 10).until(EC.visibility_of(element))
+
     def implicitly_wait(self):
         return self.browser.implicitly_wait(5)
 
@@ -71,21 +95,7 @@ class BasePage():
     def top_account(self):
         return self.find(top_account)
 
-    def save_screenshot(self, file_name: str):
-        return self.browser.save_screenshot(f"screenshots/{file_name}.png")
-
-    def script_click(self, element):
-        return self.browser.execute_script("arguments[0].click();", element)
-
-    def script_scroll(self, element):
-        return self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
-
-    def get_value(self, locator):
-        return self.browser.find_element(*locator).get_attribute("value")
-
-    def get_href(self, locator):
-        return self.browser.find_element(*locator).get_attribute("href")
-
+    '''Взаимодействие с браузером'''
     def window_handles(self):
         return self.browser.window_handles
 
@@ -115,10 +125,9 @@ class BasePage():
         url = self.get_page_url()
         self.close()
         self.switch_to_window(self.window_handles()[0])
-        print(href)
-        print(url)
-        print()
-        if href == url:
+        href_2 = self.cut_string(href)
+        url_2 = self.cut_string(url)
+        if href_2 == url_2:
             return True
         else:
             return False

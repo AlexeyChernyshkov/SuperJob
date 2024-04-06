@@ -12,7 +12,6 @@ def browser():
     driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()
     yield driver
-    # driver.save_screenshot("test.png")
     driver.quit()
 
 
