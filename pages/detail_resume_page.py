@@ -1,7 +1,7 @@
 # Тут содержаться методы для детальной страницы поиска резюме
 
 from pages.base_page import BasePage
-from pages.locators import *
+from locators.detail_resume_page_locators import *
 
 detail_resume_url = 'https://russia.superjob.ru/'
 

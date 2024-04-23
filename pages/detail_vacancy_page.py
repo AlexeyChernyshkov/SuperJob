@@ -1,7 +1,7 @@
 # Тут содержаться методы для детальной страницы поиска вакансий
 
 from pages.base_page import BasePage
-from pages.locators import *
+from locators.detail_vacancy_page_locators import *
 
 detail_vacancy_url = 'https://russia.superjob.ru/'
 

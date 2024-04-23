@@ -1,6 +1,6 @@
 # Тут содержаться методы для детальной страницы поиска курсов
 from pages.base_page import BasePage
-from pages.locators import *
+from locators.detail_course_page_locators import *
 
 detail_courses_url = 'https://www.superjob.ru/'
 

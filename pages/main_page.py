@@ -1,27 +1,34 @@
-from pages.locators import *
-from pages.users import *
+from locators.main_page_locators import *
+from user_data.users import *
 from pages.base_page import BasePage
-from selenium.webdriver.common.by import By
-
 
 # resume_create_url = 'https://www.superjob.ru/resume/create/'
 base_url = 'https://www.superjob.ru/'
+
+
 # Класс для авторизации пользователем
-class Autorization_customers:
-    def __init__(self, browser):
+class Autorization_customers(BasePage):
+    def __init__(self, browser, url):
+        super().__init__(browser, url)
+        self.top_button_login = browser.top_button_login
         self.field_username = browser.find_element(*field_username)
         self.field_password = browser.find_element(*field_password)
         self.button_login_accept = browser.find_element(*button_login_accept)
 
     def login(self, field_username: str = '', field_password: str = ''):  # авторизация или вход на страницу
+        self.top_button_login.click()
+        self.wait_text_in_element(button_login_accept, "Войти")
         self.field_username.send_keys(test_user_customers)  # заполнение поля логин
         self.field_password.send_keys(test_password_user)  # заполнение поля пароль
         self.button_login_accept.click()  # нажатие на кнопку Войти
 
     def login_with_resumes(self, field_username: str = '', field_password: str = ''):  # авторизация или вход на страницу
+        self.top_button_login.click()
+        self.wait_text_in_element(button_login_accept, "Войти")
         self.field_username.send_keys(test_user_customers_with_resumes)  # заполнение поля логин
         self.field_password.send_keys(test_password_user_with_resumes)  # заполнение поля пароль
         self.button_login_accept.click()  # нажатие на кнопку Войти
+
 
 class MainPageMenu(BasePage):
     def __init__(self, browser, url):
@@ -33,6 +40,7 @@ class MainPageMenu(BasePage):
     def main_menu(self, element):
         self.kebab_menu().click()
         return self.compare_url(element)
+
 
 
 #  Класс для авторизации компанией пока не актуально

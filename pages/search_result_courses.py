@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
-from pages.locators import *
+from locators.search_result_courses_locators import *
+from locators.common_locators import *
 
 search_result_courses_url = 'https://www.superjob.ru/kursy/'
 

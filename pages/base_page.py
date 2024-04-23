@@ -1,11 +1,10 @@
 """Страница с методами, которые буду общими для всех страниц"""
-import time
 
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-from pages.locators import *
+from locators.common_locators import *
 
 
 class BasePage():
@@ -90,18 +89,9 @@ class BasePage():
     def implicitly_wait(self):
         return self.browser.implicitly_wait(5)
 
-    def top_button_login(self):
-        return self.find(top_button_login)
-
-    def notifications(self):
-        return self.find(notifications)
-
-    def top_account(self):
-        return self.find(top_account)
-
     '''Взаимодействие с браузером'''
-    def session_id(self):
-        return self.browser.session_id
+    # def session_id(self):
+    #     return self.browser.session_id
 
     def window_handles(self):
         return self.browser.window_handles
