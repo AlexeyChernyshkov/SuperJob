@@ -1,7 +1,5 @@
 from pages.base_page import BasePage
-from pages.locators import *
-from selenium.webdriver.common.by import By
-
+from locators.user_resume_locators import *
 
 user_resume_url = 'https://www.superjob.ru/user/resume/'
 

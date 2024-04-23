@@ -1,12 +1,6 @@
-import time
-
 import pytest
 
-from pages.user_resume import *
-from pages.main_page import Autorization_customers
-from pages.users import *
-from pages.locators import *
-import time
+from user_data.users import *
 
 
 @pytest.mark.parametrize('username, password', [(test_user_customers_with_resumes, test_password_user_with_resumes)])

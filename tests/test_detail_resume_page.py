@@ -1,8 +1,7 @@
 # Тут тест проверки открытия страницы резюме и с фиксацией итогового результата
-import time
 
 from pages.detail_resume_page import *
-from pages.locators import *
+from locators.common_locators import *
 from selenium.common.exceptions import TimeoutException
 import os
 

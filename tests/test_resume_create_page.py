@@ -3,9 +3,9 @@
 import pytest
 
 from pages.resume_create import *
-from pages.main_page import Autorization_customers
-from pages.users import *
-from pages.locators import *
+from pages.main_page import *
+from user_data.users import *
+# from locators.main_page_locators import *
 from selenium.common.exceptions import NoSuchElementException
 import os
 
@@ -13,15 +13,16 @@ import os
 @pytest.mark.parametrize('username, password', [(test_user_customers, test_password_user)])
 def test_all_fields_exist(browser, username, password):
     resume_create = ResumeCreate(browser, resume_create_url)
+    top_menu = MainPageMenu(browser, resume_create_url)
     resume_create.open()
     '''Авторизация'''
-    resume_create.top_button_login().click()
+    # resume_create.top_button_login().click()
 
     # Ожидаем открытия окна авторизации
-    resume_create.wait_text_in_element(button_login_accept, "Войти")
+    # resume_create.wait_text_in_element(button_login_accept, "Войти")
 
     # Авторизуемся методом из main_pages
-    authorization_1 = Autorization_customers(browser)
+    authorization_1 = Autorization_customers(browser, base_url)
     authorization_1.login(username, password)
 
     # Ожидаем переход к экрану создания резюме после авторизации, проверкой кликабельности элемента
@@ -110,13 +111,13 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
 
     try:
         '''Авторизация'''
-        resume_auth_create_2.top_button_login().click()
+        # resume_auth_create_2.top_button_login().click()
 
         # Ожидаем открытия окна авторизации
-        resume_auth_create_2.wait_text_in_element(button_login_accept, "Войти")
+        # resume_auth_create_2.wait_text_in_element(button_login_accept, "Войти")
 
         # Авторизуемся методом из main_pages
-        authorization_2 = Autorization_customers(browser)
+        authorization_2 = Autorization_customers(browser,base_url)
         authorization_2.login(username, password)
 
         # Ожидаем переход к экрану создания резюме после авторизации, проверкой кликабельности элемента
@@ -229,3 +230,4 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
     #     assert resume_auth_create_2.successful_resume_create().is_displayed, f"Not Successful Resume Create"
     # finally:
     #     resume_auth_create_2.save_screenshot('test_resume_create_with_authorization_all_fields_3')
+
