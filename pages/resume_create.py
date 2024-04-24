@@ -58,12 +58,6 @@ class ResumeCreate(BasePage):
     def add_photo_img(self):
         return self.find(add_photo_img)
 
-    def add_photo_cancel(self):
-        return self.find(add_photo_cancel)
-
-    def add_photo_close(self):
-        return self.find(add_photo_close)
-
     def add_photo_upload(self):
         return self.find(add_photo_upload)
 

@@ -7,7 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from locators.common_locators import *
 
 
-class BasePage():
+class BasePage:
     def __init__(self, browser, url):
         self.browser = browser
         self.url = url
@@ -34,25 +34,25 @@ class BasePage():
         return self.browser.text()
 
     def send_keys(self, args):
-        return self.browser.send_keys(args)
+        self.browser.send_keys(args)
 
     def click(self):
-        return self.browser.click()
+        self.browser.click()
 
     def clear(self):
-        return self.browser.clear()
+        self.browser.clear()
 
     def is_enabled(self):
         return self.browser.is_enabled()
 
     def save_screenshot(self, file_name: str):
-        return self.browser.save_screenshot(f"screenshots/{file_name}.png")
+        self.browser.save_screenshot(f"screenshots/{file_name}.png")
 
     def script_click(self, element):
-        return self.browser.execute_script("arguments[0].click();", element)
+        self.browser.execute_script("arguments[0].click();", element)
 
     def script_scroll(self, element):
-        return self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
+        self.browser.execute_script("arguments[0].scrollIntoView(true);", element)
 
     def get_value(self, locator):
         return self.browser.find_element(*locator).get_attribute("value")
@@ -87,11 +87,11 @@ class BasePage():
         return WebDriverWait(self.browser, 5).until(EC.visibility_of(element))
 
     def implicitly_wait(self):
-        return self.browser.implicitly_wait(5)
+        self.browser.implicitly_wait(5)
 
     '''Взаимодействие с браузером'''
-    # def session_id(self):
-    #     return self.browser.session_id
+    def session_id(self):
+        return self.browser.session_id
 
     def window_handles(self):
         return self.browser.window_handles
