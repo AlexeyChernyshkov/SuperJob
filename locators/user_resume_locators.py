@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 
 
-
 update_resumes_btn = (By.CSS_SELECTOR, '.f-test-button-Obnovit_vse_rezyume')
 create_resume_btn = (By.CSS_SELECTOR, 'f-test-button-Sozdat_rezyume')
 resume_more_options_kebab = (By.CSS_SELECTOR, '.f-test-resume_card .f-test-button-more_vert')
