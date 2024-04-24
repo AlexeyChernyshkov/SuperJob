@@ -3,7 +3,7 @@ import pytest
 from user_data.users import *
 
 
-@pytest.mark.parametrize('username, password', [(test_user_customers_with_resumes, test_password_user_with_resumes)])
+@pytest.mark.parametrize('username, password', [(test_user_login_with_resumes, test_user_password_with_resumes)])
 def test_1(browser, username, password):
     # test_1 = UserResumes(browser, user_resume_url)
     # test_1.open()

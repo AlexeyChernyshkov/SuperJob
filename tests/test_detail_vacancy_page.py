@@ -1,7 +1,7 @@
 # Тут тест проверки открытия страницы вакансии и с фиксацией итогового результата
 
 from pages.detail_vacancy_page import *
-from locators.common_locators import *
+from locators.detail_vacancy_page_locators import *
 
 def test_detail_vacancy(browser):
     vacancy_detail = DetailPageVacancy(browser, detail_vacancy_url)
