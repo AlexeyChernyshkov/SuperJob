@@ -1,5 +1,5 @@
 #  Тест на проверку основного функционала на странице поиска курсов
-from pages.search_result_courses import *
+from pages.search_result_courses_page import *
 
 
 def test_field_exist(browser):

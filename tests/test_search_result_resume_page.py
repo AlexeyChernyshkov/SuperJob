@@ -1,5 +1,5 @@
 #  Тест на проверку основного функционала на странице поиска резюме
-from pages.search_result_resumes import *
+from pages.search_result_resumes_page import *
 
 
 def test_field_exist(browser):

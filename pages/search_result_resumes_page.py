@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.search_result_resumes_locators import *
+from locators.search_result_resumes_page_locators import *
 from locators.common_locators import *
 
 search_result_resumes_url = 'https://www.superjob.ru/resume/search_resume.html'

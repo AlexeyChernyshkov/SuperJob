@@ -1,5 +1,5 @@
 #  Тест на проверку основного функционала на странице поиска вакансий
-from pages.search_result_vacancy import *
+from pages.search_result_vacancy_page import *
 
 
 def test_field_exist(browser):

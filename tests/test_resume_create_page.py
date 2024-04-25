@@ -2,7 +2,7 @@
 
 import pytest
 
-from pages.resume_create import *
+from pages.resume_create_page import *
 from pages.main_page import *
 from user_data.users import *
 # from locators.main_page_locators import *

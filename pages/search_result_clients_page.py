@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.search_result_clients_locators import *
+from locators.search_result_clients_page_locators import *
 from locators.common_locators import *
 
 

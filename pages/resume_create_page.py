@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from locators.resume_create_locators import *
+from locators.resume_create_page_locators import *
 
 resume_create_url = 'https://www.superjob.ru/resume/create/'
 

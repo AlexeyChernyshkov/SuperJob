@@ -1,5 +1,5 @@
 #  Тест на проверку основного функционала на странице поиска компаний
-from pages.search_result_clients import *
+from pages.search_result_clients_page import *
 
 
 def test_field_exist(browser):
