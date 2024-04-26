@@ -1,6 +1,6 @@
 # Тут содержаться методы для детальной страницы поиска компаний
 from pages.base_page import BasePage
-from pages.locators import *
+from locators.detail_client_page_locators import *
 
 detail_client_url = 'https://www.superjob.ru/'
 

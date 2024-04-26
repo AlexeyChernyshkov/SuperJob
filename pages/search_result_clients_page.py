@@ -1,5 +1,6 @@
 from pages.base_page import BasePage
-from pages.locators import *
+from locators.search_result_clients_page_locators import *
+from locators.common_locators import *
 
 
 search_result_clients_url = 'https://russia.superjob.ru/clients/'

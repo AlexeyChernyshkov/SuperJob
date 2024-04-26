@@ -1,7 +1,5 @@
 from pages.base_page import BasePage
-from pages.locators import *
-from selenium.webdriver.common.by import By
-
+from locators.resume_create_page_locators import *
 
 resume_create_url = 'https://www.superjob.ru/resume/create/'
 
@@ -59,12 +57,6 @@ class ResumeCreate(BasePage):
 
     def add_photo_img(self):
         return self.find(add_photo_img)
-
-    def add_photo_cancel(self):
-        return self.find(add_photo_cancel)
-
-    def add_photo_close(self):
-        return self.find(add_photo_close)
 
     def add_photo_upload(self):
         return self.find(add_photo_upload)

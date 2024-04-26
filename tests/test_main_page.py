@@ -1,7 +1,5 @@
-import pytest
-
 from pages.main_page import *
-from pages.locators import *
+from locators.main_page_locators import *
 from selenium.common.exceptions import NoSuchElementException
 import os
 
