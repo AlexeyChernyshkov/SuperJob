@@ -112,7 +112,7 @@ SuperJob/
     - **`test_detail_resume_page.py`**: Тест детальной страницы резюме
 
     - **`test_detail_vacancy_page.py`**: Тест детальной страницы вакансии
-    - 
+
     - **`test_main_page.py`**: Тест общего элемента страницы header
 
     - **`test_resume_create_page.py`**: Тест для страницы "Создание резюме"
