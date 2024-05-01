@@ -1,6 +1,6 @@
 # Тут содержаться методы для детальной страницы поиска компаний
 from pages.base_page import BasePage
-from pages.locators import *
+from locators.detail_client_page_locators import *
 
 detail_client_url = 'https://www.superjob.ru/'
 
@@ -11,7 +11,7 @@ class DetailPageClients(BasePage):
         super().__init__(browser, url)
 
     def search_string(self):
-        return self.find(the_search_string)
+        return self.find(the_search_string_clients)
 
     def button_search_resume(self):
         return self.find(the_search_button)
@@ -24,3 +24,6 @@ class DetailPageClients(BasePage):
 
     def select_resume_clients(self):
         return self.find(select_resume_clients)
+
+    def vacancy_btn(self):
+        return self.find(vacancy_btn)
