@@ -29,6 +29,8 @@ def test_detail_resume(browser):
         handles = resume_detail.window_handles()
         resume_detail_window = handles[1]
         resume_detail.switch_to_window(resume_detail_window)
+        url = resume_detail.get_page_url()
+        assert 'superjob.ru/resume/' in url, f'Not in url'
         resume_detail.save_screenshot('test_detail_resume_page.py')
     except TimeoutException as exc:
         print(exc)

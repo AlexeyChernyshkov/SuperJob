@@ -30,6 +30,8 @@ def test_detail_course(browser):
         handles = courses_detail.window_handles()
         resume_detail_window = handles[1]
         courses_detail.switch_to_window(resume_detail_window)
+        url = courses_detail.get_page_url()
+        assert 'superjob.ru/kursy/' in url, f"Not in url"
         courses_detail.save_screenshot('test_detail_courses_page.py')
     except TimeoutException as exc:
         print(exc)
