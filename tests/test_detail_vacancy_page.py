@@ -23,8 +23,9 @@ def test_detail_vacancy(browser):
         vacancy_detail.switch_to_window(resume_detail_window)
     finally:
         # Фиксация результатов
+        url = vacancy_detail.get_page_url()
+        assert 'superjob.ru/vakansii/' in url, f"Not in url"
         vacancy_detail.save_screenshot('test_detail_vacancy_page.py')
 
 
 
-#app > div > div._1zxix > div._3C7W2 > div > div:nth-child(2) > div._31epc > div._3VMkc._32Kjr > div:nth-child(1) > div > div:nth-child(1) > div > div
