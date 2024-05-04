@@ -216,11 +216,11 @@ def test_resume_create_with_authorization_all_fields(browser, username, password
     finally:
         resume_auth_create_2.save_screenshot("test_resume_create_with_authorization_all_fields_2")
 
-    # try:
-    #     '''Сохраняем резюме'''
-    #     resume_auth_create_2.resume_save_button().click()
-    #     resume_auth_create_2.wait_visibility_of_element_located(successful_resume_create)
-    #     assert resume_auth_create_2.successful_resume_create().is_displayed, f"Not Successful Resume Create"
-    # finally:
-    #     resume_auth_create_2.save_screenshot('test_resume_create_with_authorization_all_fields_3')
+    try:
+        '''Сохраняем резюме'''
+        resume_auth_create_2.resume_save_button().click()
+        resume_auth_create_2.wait_visibility_of_element_located(successful_resume_create)
+        assert resume_auth_create_2.successful_resume_create().is_displayed, f"Not Successful Resume Create"
+    finally:
+        resume_auth_create_2.save_screenshot('test_resume_create_with_authorization_all_fields_3')
 
